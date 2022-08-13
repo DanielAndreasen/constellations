@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    container_name: constellation
+    build: ./web
+    volumes:
+      - ./web:/app
+    ports:
+      - 5003:5003

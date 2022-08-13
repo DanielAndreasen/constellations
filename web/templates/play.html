@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block html_head %}
+<style>
+img {
+  position: absolute;
+  z-index: -1;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<br>
+<img
+  alt=""
+  src="{{ image }}"
+  style="transform:rotate({{ rotation }}deg)"
+  width=700
+  height=600>
+
+<form name="guess" method="POST">
+  {% for answer in answers %}
+    <button class="btn btn-primary" type="submit" name="guess" value="{{title}}-{{answer}}">
+      {{answer}}
+    </button>
+  {% endfor %}
+</form>
+
+{% endblock %}
