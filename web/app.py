@@ -5,10 +5,12 @@ from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ndu93hf2mx9r893028xj'
+images = {get_name(image): image for image in glob('static/*.jpg')}
+
 
 def get_name(fname):
     return fname.split('/')[-1].split('.')[0].title().replace('_', ' ')
-images = {get_name(image): image for image in glob('static/*.jpg')}
+
 
 def get_random():
     return choice([key for key in images.keys()])
@@ -50,4 +52,4 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5003, debug=True)
+    app.run(host='0.0.0.0', port=5003, debug=False)
