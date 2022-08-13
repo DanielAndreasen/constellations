@@ -13,7 +13,7 @@ $ git clone git@github.com:DanielAndreasen/constellations.git
 $ cd constellations
 $ docker-compose up -d
 ```
-and visit `http://localhost:5003`.
+and visit http://localhost:5003.
 
 # Settings
 If it is a bit too complicated (or not challenging enough) with 5 options, then
